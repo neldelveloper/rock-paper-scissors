@@ -1,32 +1,40 @@
+
+//making sure the page loads before the script starts running- ends with the '500' at the bottom//
+window.setTimeout(function() {
+
+// your js code goes here
+
+
+
+//resets the score to zero-zero//
 let playerScore = 0;
 let computerScore = 0;
 
-
+//chooses computer's throw//
 function computerPlay() {
 	let options = ["rock", "paper", "scissors"];
  	return (options[Math.floor(Math.random() *options.length)]);
  	
 }
 
-
+//loops through the game five times//
 function game() {
-	// let playerScore = 0;
-	// let computerScore = 0;
-	playRound();
-	playRound();
-	playRound();
-	playRound();
-	playRound();
+	
+	for (let i = 0; i < 5; i++) {
+		playRound()
+	}
 
 }
+////////////////////////////////////
 
 
 
+//plays the actual game//
 function playRound(playerSelection,computerSelection) {
-	// let playerScore = 0;
-	// let computerScore = 0;
+	
 	computerSelection = computerPlay();
 	playerSelection = prompt("What do you choose?", "e.g. rock, paper, or scissors");
+
 	playerSelection = playerSelection.toLowerCase();
 	console.log("The computer selected: " + computerSelection);
 	console.log("You chose: " + playerSelection);
@@ -53,11 +61,23 @@ function playRound(playerSelection,computerSelection) {
 }
 
 
-
+//calling the function to play the game five times//
 game();
+
+
+//summarizes the score//
 
 console.log("The final score is: " + playerScore + " for you, and " + computerScore + " for the computer");
 
+if(playerScore > computerScore) {
+	console.log("You won!");
+} else if (playerScore == computerScore) {
+	console.log("Folks, we have a tie!");
+} else {
+	console.log("You got beat by the computer my friend, better luck next time");
+}
+
+}, 500);
 
 
 
