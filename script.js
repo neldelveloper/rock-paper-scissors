@@ -1,4 +1,5 @@
-
+let playerScore = 0;
+let computerScore = 0;
 
 
 function computerPlay() {
@@ -9,7 +10,8 @@ function computerPlay() {
 
 
 function game() {
-	
+	// let playerScore = 0;
+	// let computerScore = 0;
 	playRound();
 	playRound();
 	playRound();
@@ -21,8 +23,8 @@ function game() {
 
 
 function playRound(playerSelection,computerSelection) {
-	let playerScore = 0;
-	let computerScore = 0;
+	// let playerScore = 0;
+	// let computerScore = 0;
 	computerSelection = computerPlay();
 	playerSelection = prompt("What do you choose?", "e.g. rock, paper, or scissors");
 	playerSelection = playerSelection.toLowerCase();
@@ -32,18 +34,19 @@ function playRound(playerSelection,computerSelection) {
 
 	if (playerSelection == "rock" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "paper" || playerSelection == "scissors" && computerSelection == "scissors") {
 		console.log("We have a tie!")
-		console.log("The score is: " + playerScore + " for you, and " + computerScore + " for the computer");
+		console.log("The score is still: " + playerScore + " for you, and " + computerScore + " for the computer");
 	} else if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
 			console.log("You win!");
-			playerScore++;
+			++playerScore;
 			console.log("The score is: " + playerScore + " for you, and " + computerScore + " for the computer");
 	} else if (computerSelection == "rock" && playerSelection == "scissors" || computerSelection == "paper" && playerSelection == "rock" || computerSelection == "scissors" && playerSelection == "paper") {
 			console.log("You lose!");
-			computerScore++;
+			++computerScore;
 			console.log("The score is: " + playerScore + " for you, and " + computerScore + " for the computer");
 	} else {
 
 		console.log("Oops, something went wrong!");
+		console.log("The score is still: " + playerScore + " for you, and " + computerScore + " for the computer");
 	}
 
 
@@ -51,44 +54,10 @@ function playRound(playerSelection,computerSelection) {
 
 
 
-
 game();
-//playRound();
+
 console.log("The final score is: " + playerScore + " for you, and " + computerScore + " for the computer");
 
 
 
 
-
-
-
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
-
-
-
-
-
-
-
-
-
-// function playRound(playerSelection) {
-//   computerSelection = computerPlay();
-//   playerSelection = prompt("what is your choice?");
-//   playerSelection.toLowerCase();
-//   console.log(playerSelection);
-
-// }
-
-// function computerPlay() {
-
-// 	let options = ["rock", "paper", "scissors"];
-// 	computerSelection = (options[Math.floor(Math.random() *options.length)])
-// 	return computerSelection;
-// }
-
-// // const playerSelection = "rock";
-// // const computerSelection = computerPlay();
-// // console.log(playRound(playerSelection, computerSelection));
